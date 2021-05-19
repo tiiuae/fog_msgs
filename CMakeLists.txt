@@ -12,6 +12,7 @@ find_package(std_msgs REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
 
 # set(msg_files
   # msg/test.msg
@@ -19,12 +20,13 @@ find_package(geometry_msgs REQUIRED)
 
 set(srv_files
   srv/Vec4.srv
+  srv/Path.srv
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
     ${msg_files}
     ${srv_files}
-    DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs std_srvs
+    DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs nav_msgs std_srvs
   )
 
 ament_export_dependencies(rosidl_default_runtime)
