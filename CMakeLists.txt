@@ -21,6 +21,7 @@ find_package(nav_msgs REQUIRED)
 set(srv_files
   srv/Vec4.srv
   srv/Path.srv
+  srv/Point.srv
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
