@@ -28,6 +28,7 @@ jobs:
           set -eux
           mkdir bin
           pushd fogsw-ci-scripts
+          export ROS=1
           ./generate_deb.sh ../fog_msgs ../bin/
           popd
 
