@@ -16,12 +16,16 @@ find_package(nav_msgs REQUIRED)
 
 set(msg_files
   msg/ControlInterfaceDiagnostics.msg
+  msg/EstimatorType.msg
 )
 
 set(srv_files
   srv/Vec4.srv
   srv/Path.srv
   srv/Point.srv
+  srv/ChangeEstimator.srv
+  srv/GetOrigin.srv
+  srv/GetBool.srv
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
