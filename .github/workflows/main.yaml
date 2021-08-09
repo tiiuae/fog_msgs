@@ -112,4 +112,6 @@ jobs:
           ls
           cd "$GITHUB_WORKSPACE"
           ls
+          ls rclgo-msgs
+          ls rclgo-msgs/.tools
           ./rclgo-msgs/.tools/generate-package.sh fog_msgs rclgo-msgs
