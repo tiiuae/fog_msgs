@@ -2,9 +2,9 @@ name: main
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   tii-deb-build:
@@ -80,3 +80,33 @@ jobs:
                -H 'Accept: application/vnd.github.everest-preview+json' \
                -u $USER:$TOKEN \
                --data '{"event_type": "rebuild-fog-drone", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
+
+  update-rclgo-msgs:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout fog_msgs
+        uses: actions/checkout@v2
+        with:
+          path: fog_msgs
+
+      - name: Checkout rclgo-msgs
+        uses: actions/checkout@v2
+        with:
+          path: rclgo-msgs
+
+      - name: Setup Go environment
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.16
+
+      - name: Install dependencies
+        run: |
+          echo "deb http://packages.ros.org/ros2/ubuntu focal main" > /etc/apt/sources.list.d/ros2-latest.list
+          apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+          apt-get update
+          apt-get install -y ros-foxy-desktop
+
+      - name: Generate and push bindings
+        run: |
+          . /opt/ros/foxy/setup.sh
+          rclgo-msgs/.tools/generate-package.sh fog_msgs rclgo-msgs
