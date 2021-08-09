@@ -107,7 +107,7 @@ jobs:
 
       - name: Generate and push bindings
         run: |
-          . /opt/ros/foxy/setup.sh
+          # . /opt/ros/foxy/setup.sh
           pwd
           ls
           cd "$GITHUB_WORKSPACE"
