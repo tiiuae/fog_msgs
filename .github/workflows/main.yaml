@@ -108,4 +108,5 @@ jobs:
       - name: Generate and push bindings
         run: |
           . /opt/ros/foxy/setup.sh
+          cd "$GITHUB_WORKSPACE"
           rclgo-msgs/.tools/generate-package.sh fog_msgs rclgo-msgs
