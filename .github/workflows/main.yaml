@@ -98,12 +98,12 @@ jobs:
         with:
           go-version: 1.16
 
-      - name: Install dependencies
-        run: |
-          echo "deb http://packages.ros.org/ros2/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/ros2-latest.list
-          sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-          sudo apt-get update
-          sudo apt-get install -y ros-foxy-desktop
+      # - name: Install dependencies
+      #   run: |
+      #     echo "deb http://packages.ros.org/ros2/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/ros2-latest.list
+      #     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+      #     sudo apt-get update
+      #     sudo apt-get install -y ros-foxy-desktop
 
       - name: Generate and push bindings
         run: |
@@ -112,6 +112,6 @@ jobs:
           ls
           cd "$GITHUB_WORKSPACE"
           ls
-          ls rclgo-msgs
-          ls rclgo-msgs/.tools
+          ls -a rclgo-msgs
+          ls -a rclgo-msgs/.tools
           ./rclgo-msgs/.tools/generate-package.sh fog_msgs rclgo-msgs
