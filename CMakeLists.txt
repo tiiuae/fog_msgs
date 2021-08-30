@@ -26,6 +26,8 @@ set(srv_files
   srv/ChangeEstimator.srv
   srv/GetOrigin.srv
   srv/GetBool.srv
+  srv/SetPx4ParamInt.srv
+  srv/GetPx4ParamInt.srv
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
