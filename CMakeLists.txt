@@ -18,6 +18,8 @@ find_package(nav_msgs REQUIRED)
 set(msg_files
   msg/ControlInterfaceDiagnostics.msg
   msg/NavigationDiagnostics.msg
+  msg/MeshQos.msg
+  msg/MeshQosArray.msg
 )
 
 set(srv_files
