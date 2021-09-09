@@ -1,0 +1,11 @@
+float64 latitude_deg
+float64 longitude_deg
+float64 relative_altitude_m
+float64 yaw
+---
+float64 local_x
+float64 local_y
+float64 local_z
+float64 yaw
+bool success
+string message

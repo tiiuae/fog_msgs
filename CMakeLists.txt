@@ -3,6 +3,7 @@ project(fog_msgs)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 find_package(ament_cmake REQUIRED)
 find_package(builtin_interfaces REQUIRED)
@@ -17,17 +18,20 @@ find_package(nav_msgs REQUIRED)
 set(msg_files
   msg/ControlInterfaceDiagnostics.msg
   msg/EstimatorType.msg
+  msg/ObstacleSectors.msg
+  msg/NavigationDiagnostics.msg
 )
 
 set(srv_files
   srv/Vec4.srv
   srv/Path.srv
-  srv/Point.srv
   srv/ChangeEstimator.srv
   srv/GetOrigin.srv
   srv/GetBool.srv
   srv/SetPx4ParamInt.srv
   srv/GetPx4ParamInt.srv
+  srv/WaypointToLocal.srv
+  srv/PathToLocal.srv
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
