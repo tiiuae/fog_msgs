@@ -30,6 +30,8 @@ set(srv_files
   srv/GetBool.srv
   srv/SetPx4ParamInt.srv
   srv/GetPx4ParamInt.srv
+  srv/SetPx4ParamFloat.srv
+  srv/GetPx4ParamFloat.srv
   srv/WaypointToLocal.srv
   srv/PathToLocal.srv
 )
