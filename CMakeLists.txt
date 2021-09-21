@@ -20,6 +20,9 @@ set(msg_files
   msg/EstimatorType.msg
   msg/ObstacleSectors.msg
   msg/NavigationDiagnostics.msg
+  msg/ObstacleSectors.msg
+  msg/Vector4Stamped.msg
+  msg/FutureTrajectory.msg
 )
 
 set(srv_files
