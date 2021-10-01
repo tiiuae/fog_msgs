@@ -18,14 +18,22 @@ find_package(nav_msgs REQUIRED)
 set(msg_files
   msg/ControlInterfaceDiagnostics.msg
   msg/ObstacleSectors.msg
-  msg/NavigationDiagnostics.msg
   msg/Vector4Stamped.msg
   msg/FutureTrajectory.msg
+  msg/EstimatorType.msg
+  msg/NavigationDiagnostics.msg
 )
 
 set(srv_files
   srv/Vec4.srv
   srv/Path.srv
+  srv/ChangeEstimator.srv
+  srv/GetOrigin.srv
+  srv/GetBool.srv
+  srv/SetPx4ParamInt.srv
+  srv/GetPx4ParamInt.srv
+  srv/SetPx4ParamFloat.srv
+  srv/GetPx4ParamFloat.srv
   srv/WaypointToLocal.srv
   srv/PathToLocal.srv
 )
