@@ -1,5 +1,0 @@
-fog_msgs/EstimatorType estimator_type
----
-bool success
-string message
-fog_msgs/EstimatorType estimator_type
