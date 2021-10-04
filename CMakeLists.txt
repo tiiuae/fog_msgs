@@ -17,6 +17,7 @@ find_package(nav_msgs REQUIRED)
 
 set(msg_files
   msg/ControlInterfaceDiagnostics.msg
+  msg/OdometryDiagnostics.msg
   msg/OdometryType.msg
   msg/NavigationDiagnostics.msg
   msg/ObstacleSectors.msg
