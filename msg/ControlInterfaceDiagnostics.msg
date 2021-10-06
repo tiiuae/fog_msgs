@@ -8,4 +8,4 @@ bool gps_origin_set
 bool getting_odom
 bool getting_control_mode
 bool getting_land_sensor
-
+bool manual_control
