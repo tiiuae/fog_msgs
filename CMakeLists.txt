@@ -26,8 +26,6 @@ set(msg_files
 set(srv_files
   srv/Vec4.srv
   srv/Path.srv
-  srv/GetOrigin.srv
-  srv/GetBool.srv
   srv/SetPx4ParamInt.srv
   srv/GetPx4ParamInt.srv
   srv/SetPx4ParamFloat.srv
