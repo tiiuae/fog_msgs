@@ -104,8 +104,6 @@ bloom-generate rosdebian --os-name ubuntu --os-version focal --ros-distro ${ROS_
 
 echo "[INFO] Clean up."
 
-rm -rf obj-x86_64-linux-gnu debian
-
 if [ -e ${mod_dir}/debian_bak ]; then
 	cp -r debian_bak debian
 	rm -rf debian_bak
