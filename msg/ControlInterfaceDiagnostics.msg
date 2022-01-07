@@ -3,7 +3,8 @@ bool armed
 bool airborne
 bool moving
 bool mission_finished
-uint8 last_mission_size
+uint8 mission_size
+uint8 mission_waypoint
 bool gps_origin_set
 bool getting_odom
 bool getting_control_mode
