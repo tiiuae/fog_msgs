@@ -16,6 +16,8 @@ find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 
 set(msg_files
+  msg/ControlInterfaceVehicleState.msg
+  msg/ControlInterfaceMissionState.msg
   msg/ControlInterfaceDiagnostics.msg
   msg/NavigationDiagnostics.msg
   msg/ObstacleSectors.msg
@@ -39,6 +41,10 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     ${srv_files}
     DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs nav_msgs std_srvs
   )
+
+## --------------------------------------------------------------
+## |                           install                          |
+## --------------------------------------------------------------
 
 ament_export_dependencies(rosidl_default_runtime)
 ament_package()
