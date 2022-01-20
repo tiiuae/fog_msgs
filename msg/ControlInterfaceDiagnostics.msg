@@ -2,8 +2,7 @@ std_msgs/Header header
 bool armed
 fog_msgs/ControlInterfaceVehicleState vehicle_state
 fog_msgs/ControlInterfaceMissionState mission_state
-int16 mission_size
-int16 mission_waypoint
+fog_msgs/ControlInterfaceMissionProgress mission_progress
 bool gps_origin_set
 bool getting_odom
 bool getting_control_mode
