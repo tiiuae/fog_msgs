@@ -18,6 +18,7 @@ find_package(nav_msgs REQUIRED)
 set(msg_files
   msg/ControlInterfaceVehicleState.msg
   msg/ControlInterfaceMissionState.msg
+  msg/ControlInterfaceMissionProgress.msg
   msg/ControlInterfaceDiagnostics.msg
   msg/NavigationDiagnostics.msg
   msg/ObstacleSectors.msg
@@ -36,9 +37,14 @@ set(srv_files
   srv/PathToLocal.srv
 )
 
+set(action_files
+  action/ControlInterfaceAction.action
+)
+
 rosidl_generate_interfaces(${PROJECT_NAME}
     ${msg_files}
     ${srv_files}
+    ${action_files}
     DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs nav_msgs std_srvs
   )
 

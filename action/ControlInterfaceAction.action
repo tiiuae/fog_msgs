@@ -1,0 +1,9 @@
+# Request message
+nav_msgs/Path path      #path in global coordinates
+---
+# Result message
+string message
+---
+# Feedback message
+fog_msgs/ControlInterfaceMissionState mission_state
+fog_msgs/ControlInterfaceMissionProgress mission_progress
