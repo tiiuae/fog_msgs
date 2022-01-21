@@ -18,9 +18,9 @@ find_package(nav_msgs REQUIRED)
 set(msg_files
   msg/ControlInterfaceVehicleState.msg
   msg/ControlInterfaceMissionState.msg
-  msg/ControlInterfaceMissionProgress.msg
   msg/ControlInterfaceDiagnostics.msg
   msg/NavigationDiagnostics.msg
+  msg/MissionProgress.msg
   msg/ObstacleSectors.msg
   msg/Vector4Stamped.msg
   msg/FutureTrajectory.msg
