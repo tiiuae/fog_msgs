@@ -1,4 +1,4 @@
-int32 id
+uint32 mission_id
 nav_msgs/Path path
 ---
 bool success
