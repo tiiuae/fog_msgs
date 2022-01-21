@@ -4,6 +4,7 @@ fog_msgs/ControlInterfaceVehicleState vehicle_state
 fog_msgs/ControlInterfaceMissionState mission_state
 int16 mission_size
 int16 mission_waypoint
+int16 control_response_id
 bool gps_origin_set
 bool getting_odom
 bool getting_control_mode
