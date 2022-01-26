@@ -1,11 +1,13 @@
 float64 latitude_deg
 float64 longitude_deg
 float64 relative_altitude_m
-float64 yaw
+# The heading is the counterclockwise angle of a projection of the quaternion's direction vector to the XY plane from the X axis.
+float64 heading
 ---
 float64 local_x
 float64 local_y
 float64 local_z
-float64 yaw
+# The heading is the counterclockwise angle of a projection of the quaternion's direction vector to the XY plane from the X axis.
+float64 heading
 bool success
 string message
