@@ -2,7 +2,7 @@
 Changelog for package fog_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
+0.1.0 (2022-01-31)
 -----------
 * renamed yaw to heading for consistency
 * added mission state STARTING
