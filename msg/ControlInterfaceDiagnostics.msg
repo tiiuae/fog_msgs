@@ -3,6 +3,7 @@ bool armed
 fog_msgs/ControlInterfaceVehicleState vehicle_state
 fog_msgs/ControlInterfaceMissionState mission_state
 fog_msgs/MissionProgress mission_progress
+uint32 mission_id  # zero is reserved for mission started other way than through the local path callback
 bool gps_origin_set
 bool getting_odom
 bool getting_control_mode

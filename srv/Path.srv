@@ -1,3 +1,4 @@
+uint32 mission_id   # zero is reserved for missions started other way than through this service
 nav_msgs/Path path
 ---
 bool success
