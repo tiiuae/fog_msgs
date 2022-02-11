@@ -16,24 +16,25 @@ find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 
 set(msg_files
-  msg/ControlInterfaceVehicleState.msg
-  msg/ControlInterfaceMissionState.msg
-  msg/ControlInterfaceDiagnostics.msg
-  msg/NavigationDiagnostics.msg
-  msg/ObstacleSectors.msg
-  msg/Vector4Stamped.msg
-  msg/FutureTrajectory.msg
+  msg/control_interface/ControlInterfaceVehicleState.msg
+  msg/control_interface/ControlInterfaceMissionState.msg
+  msg/control_interface/ControlInterfaceDiagnostics.msg
+  msg/fog_bumper/ObstacleSectors.msg
+  msg/navigation/NavigationDiagnostics.msg
+  msg/navigation/Vector4Stamped.msg
+  msg/navigation/FutureTrajectory.msg
+  msg/odometry/Heading.msg
 )
 
 set(srv_files
   srv/Vec4.srv
-  srv/Path.srv
-  srv/SetPx4ParamInt.srv
-  srv/GetPx4ParamInt.srv
-  srv/SetPx4ParamFloat.srv
-  srv/GetPx4ParamFloat.srv
-  srv/WaypointToLocal.srv
-  srv/PathToLocal.srv
+  srv/navigation/Path.srv
+  srv/control_interface/SetPx4ParamInt.srv
+  srv/control_interface/GetPx4ParamInt.srv
+  srv/control_interface/SetPx4ParamFloat.srv
+  srv/control_interface/GetPx4ParamFloat.srv
+  srv/control_interface/WaypointToLocal.srv
+  srv/control_interface/PathToLocal.srv
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
