@@ -18,9 +18,11 @@ find_package(nav_msgs REQUIRED)
 set(msg_files
   msg/control_interface/ControlInterfaceVehicleState.msg
   msg/control_interface/ControlInterfaceMissionState.msg
-  msg/control_interface/ControlInterfaceDiagnostics.msg
   msg/control_interface/ControlInterfaceMissionProgress.msg
+  msg/control_interface/ControlInterfaceDiagnostics.msg
   msg/fog_bumper/ObstacleSectors.msg
+  msg/navigation/NavigationState.msg
+  msg/navigation/NavigationWaypointState.msg
   msg/navigation/NavigationDiagnostics.msg
   msg/navigation/Vector4Stamped.msg
   msg/navigation/FutureTrajectory.msg
