@@ -1,5 +1,6 @@
 # Request message
-nav_msgs/Path path      #path in global coordinates
+nav_msgs/Path path      # path in local coordinates
+uint32 mission_id       # zero is reserved for missions started other way than through this service
 ---
 # Result message
 string message
