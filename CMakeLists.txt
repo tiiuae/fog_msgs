@@ -18,7 +18,6 @@ find_package(nav_msgs REQUIRED)
 set(msg_files
   msg/control_interface/ControlInterfaceVehicleState.msg
   msg/control_interface/ControlInterfaceMissionState.msg
-  msg/control_interface/ControlInterfaceMissionProgress.msg
   msg/control_interface/ControlInterfaceDiagnostics.msg
   msg/fog_bumper/ObstacleSectors.msg
   msg/navigation/NavigationState.msg
@@ -27,6 +26,7 @@ set(msg_files
   msg/navigation/Vector4Stamped.msg
   msg/navigation/FutureTrajectory.msg
   msg/odometry/Heading.msg
+  msg/MissionProgress.msg
 )
 
 set(srv_files
@@ -42,6 +42,7 @@ set(srv_files
 
 set(action_files
   action/ControlInterfaceAction.action
+  action/NavigationAction.action
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}

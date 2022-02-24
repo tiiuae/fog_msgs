@@ -7,4 +7,4 @@ string message
 ---
 # Feedback message
 fog_msgs/ControlInterfaceMissionState mission_state
-fog_msgs/ControlInterfaceMissionProgress mission_progress
+fog_msgs/MissionProgress mission_progress
