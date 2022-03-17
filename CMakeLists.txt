@@ -19,6 +19,8 @@ set(msg_files
   msg/control_interface/ControlInterfaceVehicleState.msg
   msg/control_interface/ControlInterfaceMissionState.msg
   msg/control_interface/ControlInterfaceDiagnostics.msg
+  msg/control_interface/MissionItem.msg
+  msg/control_interface/MissionPlan.msg
   msg/fog_bumper/ObstacleSectors.msg
   msg/navigation/NavigationState.msg
   msg/navigation/NavigationWaypointState.msg
