@@ -2,6 +2,35 @@
 Changelog for package fog_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.1.1 (2022-03-03)
+-----------
+* added NavigationAction, renamed ControlInterfaceMissionProgress message to MissionProgress
+* [ControlInterface]: split the STOPPED mission state to CANCELED and ABORTED
+* added mission state stopped
+* added mission ID to control interface action (for later usage with navigation... may not be necessary in the end)
+* refactored NavigationDiagnostics message
+* add odometry heading, refactoring
+* updated srv/Vec4 to correct size
+* documented MissionProgress msg
+* added better documentation of diagnostic messages
+* moved mission_id to mission_progress
+* added state to vehicle state message
+* Added action for control interface
+* created separe msg for control interface mission progress
+* Contributors: Jan Bednar, Matouš Vrba, Vojtech Spurny
+
+0.1.0 (2022-01-31)
+-----------
+* renamed yaw to heading for consistency
+* added mission state STARTING
+* renamed id to mission_id for consistency and clarity
+* add ID to path and control diagnostics
+* minor message refactoring to make it a bit more cohesive
+* fixed typo
+* changed control interface diags msg
+* added current mission waypoint to the message
+* Contributors: matous, stibipet
+
 0.0.8 (2021-11-30)
 -----------
 * update package versions
