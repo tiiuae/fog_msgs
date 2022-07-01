@@ -9,9 +9,6 @@ on:
 jobs:
   tii-deb-build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ros2_distro: [foxy, galactic]
     steps:
       - name: Checkout fog_msgs
         uses: actions/checkout@v2
@@ -21,7 +18,6 @@ jobs:
       - name: Run fog-msgs docker build
         env:
           ROS: 1
-          ROS_DISTRO: ${{ matrix.ros2_distro }}
           PACKAGE_NAME: fog_msgs
         run: |
           set -eux
