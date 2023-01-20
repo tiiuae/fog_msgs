@@ -21,6 +21,10 @@ set(msg_files
   msg/ObstacleSectors.msg
   msg/Vector4Stamped.msg
   msg/FutureTrajectory.msg
+  msg/MetaMission.msg
+  msg/Mission.msg
+  msg/AtomicMission.msg
+  msg/MissionStatus.msg
 )
 
 set(srv_files
