@@ -25,6 +25,7 @@ set(msg_files
   msg/Mission.msg
   msg/AtomicMission.msg
   msg/MissionStatus.msg
+  msg/MissionSyncPermission.msg
 )
 
 set(srv_files
