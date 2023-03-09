@@ -3,27 +3,25 @@ name: main
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+      - 'README.md'
   pull_request:
     branches: [ master ]
+    paths-ignore:
+      - 'README.md'
 
 jobs:
   tii-deb-build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ros2_distro: [foxy, galactic]
     steps:
-
       - name: Checkout fog_msgs
         uses: actions/checkout@v2
         with:
           path: fog_msgs
-
       # Run docker build
       - name: Run fog-msgs docker build
         env:
           ROS: 1
-          ROS_DISTRO: ${{ matrix.ros2_distro }}
           PACKAGE_NAME: fog_msgs
         run: |
           set -eux
@@ -31,22 +29,28 @@ jobs:
           pushd fog_msgs
           ./build.sh ../bin/
           popd
+      - name: Upload build
+        uses: actions/upload-artifact@v2
+        with:
+          name: fog_msgs
+          path: bin/*.deb
+          retention-days: 1
 
-      - name: Install jfrog CLI tool
+  artifactory:
+    runs-on: ubuntu-latest
+    needs: tii-deb-build
+    if: github.event_name == 'push'
+    steps:
+      - name: Download builds
+        uses: actions/download-artifact@v2
+        with:
+          name: fog_msgs
+          path: bin
+      - uses: jfrog/setup-jfrog-cli@v2
         env:
-          JFROG_CLI_URL: https://ssrc.jfrog.io/artifactory/ssrc-gen-public-remote-cache/tools/jfrog/jfrog-1.45.2.tar.gz
-        if: github.event_name == 'push'
-        run: |
-          set -exu
-          mkdir -p "$GITHUB_WORKSPACE/.jfrog/bin"
-          curl -L "$JFROG_CLI_URL" -o "$GITHUB_WORKSPACE/.jfrog/jfrog.tar.gz"
-          tar -C "$GITHUB_WORKSPACE/.jfrog/bin" -zxf "$GITHUB_WORKSPACE/.jfrog/jfrog.tar.gz"
-          echo "$GITHUB_WORKSPACE/.jfrog/bin" >> "$GITHUB_PATH"
-          echo "JFROG_CLI_HOME_DIR=$GITHUB_WORKSPACE/.jfrog" >> "$GITHUB_ENV"
-
+          JF_ARTIFACTORY_1: ${{ secrets.ARTIFACTORY_TOKEN }}
       - name: Upload to Artifactory
         env:
-          ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
           ARTIFACTORY_REPO: debian-public-local
           DISTRIBUTION: focal
           COMPONENT: fog-sw
@@ -56,15 +60,17 @@ jobs:
         if: github.event_name == 'push'
         run: |
           set -exu
-          jfrog rt c import "$ARTIFACTORY_TOKEN"
           jfrog rt ping
-          pkg=$(find bin -name 'ros-${{ matrix.ros2_distro }}-fog-msgs*.deb')
-          jfrog rt u --deb "$DISTRIBUTION/$COMPONENT/$ARCHITECTURE" \
-                     --target-props COMMIT="$GITHUB_SHA" \
-                     --build-name "$BUILD_NAME" \
-                     --build-number "$GITHUB_SHA" \
-                     "$pkg" \
-                     "$ARTIFACTORY_REPO"
+          for pkg in bin/*.deb
+          do
+            pkg_name=$(basename $pkg)
+            jfrog rt u --deb "$DISTRIBUTION/$COMPONENT/$ARCHITECTURE" \
+                       --target-props COMMIT="$GITHUB_SHA" \
+                       --build-name "$BUILD_NAME" \
+                       --build-number "$GITHUB_SHA" \
+                       "$pkg" \
+                       "$ARTIFACTORY_REPO/$pkg_name"
+          done
           jfrog rt build-publish "$BUILD_NAME" "$GITHUB_SHA"
           jfrog rt bpr "$BUILD_NAME" "$GITHUB_SHA" "$ARTIFACTORY_REPO" \
                        --status dev \
