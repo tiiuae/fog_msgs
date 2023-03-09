@@ -1,3 +1,4 @@
+# <span style="color:red">OBSOLETED REPOSITORY</span>
 # FOG ROS2 messages
 
 ## General points

@@ -19,8 +19,10 @@ find_package(fognav_msgs REQUIRED)
 
 set(msg_files
   msg/ControlInterfaceDiagnostics.msg
+  msg/FutureTrajectory.msg
   msg/NavigationDiagnostics.msg
   msg/ObstacleSectors.msg
+  msg/Trajectory.msg
   msg/Vector4Stamped.msg
   msg/FutureTrajectory.msg
   msg/MetaMission.msg
