@@ -23,6 +23,8 @@ set(msg_files
   msg/SearchRegionArray.msg
   msg/SearchPath.msg
   msg/SearchPathArray.msg
+  msg/StatusEvent.msg
+  msg/Body.msg
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
