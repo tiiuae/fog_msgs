@@ -19,6 +19,8 @@ set(msg_files
   msg/AtomicMission.msg
   msg/MissionStatus.msg
   msg/MissionSyncPermission.msg
+  msg/ObjectLost.msg
+  msg/ObjectDetected.msg
   msg/SearchRegion.msg
   msg/SearchRegionArray.msg
   msg/SearchPath.msg
