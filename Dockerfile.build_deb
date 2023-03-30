@@ -1,4 +1,4 @@
-FROM ghcr.io/tiiuae/fog-ros-baseimage-builder:sha-11bedfa
+FROM ghcr.io/tiiuae/fog-ros-baseimage-builder:v2.1.0
 ARG GIT_RUN_NUMBER
 ARG GIT_COMMIT_HASH
 ARG GIT_VERSION_STRING

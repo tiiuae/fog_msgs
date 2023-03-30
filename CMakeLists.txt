@@ -26,6 +26,7 @@ set(msg_files
   msg/SearchPath.msg
   msg/SearchPathArray.msg
   msg/StatusEvent.msg
+  msg/Status.msg
   msg/Body.msg
 )
 
