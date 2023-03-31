@@ -1,6 +1,3 @@
-# Is this even needed?
-std_msgs/Header header
-
 # A unique ID of the mission.
 uint32 mission_id
 
