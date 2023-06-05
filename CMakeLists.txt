@@ -28,7 +28,7 @@ set(msg_files
   msg/StatusEvent.msg
   msg/Status.msg
   msg/Body.msg
-  msg/Bool.msg
+  msg/UInt8.msg
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
