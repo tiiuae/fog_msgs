@@ -1,7 +1,7 @@
 # A unique ID of the mission.
 uint32 mission_id
 
-# Index of the current atomic mission of the drone.
+# Index of the current atomic mission of the robot.
 uint32 current_atomic_mission
 
 # What is the status of the current atomic mission (see the enum below).

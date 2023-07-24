@@ -14,8 +14,9 @@ find_package(fognav_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 set(msg_files
-  msg/AlivePriority.msg
-  msg/AlivePriorities.msg
+  msg/RobotAliveInfo.msg
+  msg/RobotAliveInfos.msg
+  msg/RobotPriority.msg
   msg/MetaMission.msg
   msg/Mission.msg
   msg/AtomicMission.msg
