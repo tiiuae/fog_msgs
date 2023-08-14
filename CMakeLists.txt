@@ -30,6 +30,7 @@ set(msg_files
   msg/SearchPathArray.msg
   msg/StatusEvent.msg
   msg/Status.msg
+  msg/StringArray.msg
   msg/Body.msg
   msg/UInt8.msg
 )
