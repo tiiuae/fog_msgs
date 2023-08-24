@@ -16,7 +16,7 @@ find_package(rosidl_default_generators REQUIRED)
 set(msg_files
   msg/RobotAliveInfo.msg
   msg/RobotAliveInfos.msg
-  msg/RobotPriority.msg
+  msg/RobotPrioritySync.msg
   msg/MetaMission.msg
   msg/Mission.msg
   msg/AtomicMission.msg
