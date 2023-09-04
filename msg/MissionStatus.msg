@@ -1,5 +1,5 @@
 # A unique ID of the mission.
-uint32 mission_id
+string mission_id
 
 # Index of the current atomic mission of the robot.
 uint32 current_atomic_mission
