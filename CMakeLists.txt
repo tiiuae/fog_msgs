@@ -24,6 +24,8 @@ set(msg_files
   msg/MissionSyncPermission.msg
   msg/ObjectLost.msg
   msg/ObjectDetected.msg
+  msg/SearchMission.msg
+  msg/SearchMissionArray.msg
   msg/SearchRegion.msg
   msg/SearchRegionArray.msg
   msg/SearchPath.msg
@@ -31,6 +33,7 @@ set(msg_files
   msg/StatusEvent.msg
   msg/Status.msg
   msg/StringArray.msg
+  msg/Team.msg
   msg/TeamState.msg
   msg/TeamStates.msg
   msg/Body.msg
