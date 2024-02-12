@@ -9,3 +9,4 @@ uint8 state
 
 uint8 STATE_SEARCHING = 0
 uint8 STATE_FOUND = 1
+uint8 STATE_LOST = 2
