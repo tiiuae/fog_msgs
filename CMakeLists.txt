@@ -20,6 +20,7 @@ set(msg_files
   msg/MetaMission.msg
   msg/Mission.msg
   msg/AtomicMission.msg
+  msg/FixedwingTakeoffLanding.msg
   msg/MissionStatus.msg
   msg/MissionSyncPermission.msg
   msg/ObjectLost.msg
