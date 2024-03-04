@@ -2,4 +2,4 @@
 fog_msgs/Team team
 
 # The area to be searched by the robot team
-fog_msgs/SearchRegion region
+geographic_msgs/GeoPoint[] region
