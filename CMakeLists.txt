@@ -41,8 +41,13 @@ set(msg_files
   msg/UInt8.msg
 )
 
+set(srv_files
+  srv/BridgeConfig.srv
+)
+
 rosidl_generate_interfaces(${PROJECT_NAME}
     ${msg_files}
+    ${srv_files}
     DEPENDENCIES builtin_interfaces geometry_msgs std_msgs geographic_msgs fognav_msgs
   )
 

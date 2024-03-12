@@ -1,0 +1,6 @@
+string nats
+string ros
+string msg_type
+---
+bool success
+string message
