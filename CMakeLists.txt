@@ -39,6 +39,8 @@ set(msg_files
   msg/TeamStates.msg
   msg/Body.msg
   msg/UInt8.msg
+  msg/TypedWaypoint.msg
+  msg/TypedWaypointArray.msg
 )
 
 set(srv_files
