@@ -41,6 +41,8 @@ set(msg_files
   msg/UInt8.msg
   msg/TypedWaypoint.msg
   msg/TypedWaypointArray.msg
+  msg/Body2.msg
+  msg/Status2.msg
 )
 
 set(srv_files
