@@ -43,6 +43,8 @@ set(msg_files
   msg/TypedWaypointArray.msg
   msg/Body2.msg
   msg/Status2.msg
+  msg/DeviceParameters.msg
+  msg/DeviceParametersArray.msg
 )
 
 set(srv_files
