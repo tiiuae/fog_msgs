@@ -19,7 +19,7 @@ jobs:
         ros2_distro: [humble]
     steps:
       - name: Checkout fog_msgs
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: fog_msgs
 
