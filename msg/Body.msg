@@ -1,2 +1,2 @@
 string id
-string missionName
+string mission_name
