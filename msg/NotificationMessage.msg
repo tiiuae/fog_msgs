@@ -1,0 +1,10 @@
+string id
+string deviceId
+string event
+double timestamp
+string log_key
+int alertLevel
+string message
+string title
+string displayName
+bool seen
