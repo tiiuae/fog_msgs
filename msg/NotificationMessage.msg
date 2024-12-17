@@ -1,9 +1,9 @@
 string id
 string device_id
 string event
-double timestamp
+uint64 timestamp
 string log_key
-int alert_level
+uint32 alert_level
 string message
 string title
 string display_name
