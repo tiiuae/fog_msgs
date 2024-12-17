@@ -1,10 +1,10 @@
 string id
-string deviceId
+string device_id
 string event
 double timestamp
 string log_key
-int alertLevel
+int alert_level
 string message
 string title
-string displayName
+string display_name
 bool seen
