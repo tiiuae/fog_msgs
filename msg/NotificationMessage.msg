@@ -1,7 +1,7 @@
 string id
 string device_id
 string event
-uint64 timestamp
+float64 timestamp
 string log_key
 uint32 alert_level
 string message
