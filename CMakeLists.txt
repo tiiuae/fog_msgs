@@ -46,7 +46,6 @@ set(msg_files
   msg/DeviceParameters.msg
   msg/DeviceParametersArray.msg
   msg/NotificationMessage.msg
-  msg/NotificationMessagePayload.msg
 )
 
 set(srv_files
