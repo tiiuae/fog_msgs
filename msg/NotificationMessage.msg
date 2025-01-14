@@ -1,10 +1,4 @@
 string id
-string device_id
-string event
 float64 timestamp
-string log_key
-uint32 alert_level
 string message
 string title
-string display_name
-bool seen
