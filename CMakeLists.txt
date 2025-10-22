@@ -10,7 +10,8 @@ find_package(builtin_interfaces REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(geographic_msgs REQUIRED)
-find_package(fognav_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(action_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 set(msg_files
@@ -45,16 +46,64 @@ set(msg_files
   msg/Status2.msg
   msg/DeviceParameters.msg
   msg/DeviceParametersArray.msg
+  msg/BehaviorTreeLog.msg
+  msg/BehaviorTreeStatusChange.msg
+  msg/ControlInterfaceDiagnostics.msg
+  msg/Costmap.msg
+  msg/CostmapFilterInfo.msg
+  msg/CostmapMetaData.msg
+  msg/Geofence.msg
+  msg/GeofenceArray.msg
+  msg/NavigationDiagnostics.msg
+  msg/Particle.msg
+  msg/ParticleCloud.msg
+  msg/SpeedLimit.msg
+  msg/Task.msg
+  msg/TaskArray.msg
+  msg/TaskMetaData.msg
+  msg/Trajectory.msg
+  msg/TrajectoryPose.msg
+  msg/VoxelGrid.msg
 )
 
 set(srv_files
   srv/BridgeConfig.srv
+  srv/CheckBumperClear.srv
+  srv/ClearCostmapAroundRobot.srv
+  srv/ClearCostmapExceptRegion.srv
+  srv/ClearEntireCostmap.srv
+  srv/GetCostmap.srv
+  srv/IsPathValid.srv
+  srv/LoadMap.srv
+  srv/ManageLifecycleNodes.srv
+  srv/ResamplePath.srv
+  srv/SaveMap.srv
+  srv/SetGeofence.srv
+  srv/TransformPath.srv
+  srv/TransformPose.srv
+)
+
+set(action_files
+  action/BackUp.action
+  action/ComputePathThroughPoses.action
+  action/ComputePathToPose.action
+  action/DummyRecovery.action
+  action/FollowPath.action
+  action/FollowWaypoints.action
+  action/Land.action
+  action/NavigateThroughPoses.action
+  action/NavigateToPose.action
+  action/SmoothPath.action
+  action/Spin.action
+  action/Takeoff.action
+  action/Wait.action
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
     ${msg_files}
     ${srv_files}
-    DEPENDENCIES builtin_interfaces geometry_msgs std_msgs geographic_msgs fognav_msgs
+    ${action_files}
+    DEPENDENCIES builtin_interfaces geometry_msgs std_msgs geographic_msgs nav_msgs action_msgs
   )
 
 ament_export_dependencies(rosidl_default_runtime)
